@@ -1,0 +1,10 @@
+.signup_buttonField {
+    position: absolute;
+    bottom: 100px;
+}
+
+.signup_buttonField > button {
+    font-size: 17px;
+    font-weight: 1000;
+    letter-spacing: 5px;
+}

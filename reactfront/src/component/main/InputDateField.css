@@ -1,0 +1,9 @@
+.inputDateField {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.inputDateField > div {
+    margin: 3vh 1vh 2vh 1vh;
+}

@@ -1,0 +1,38 @@
+# server setting
+server:
+  port: 8900
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+
+# spring setting
+spring:
+  # db setting
+  datasource:
+    url: jdbc:mysql://localhost:3306/eng2
+    username: jake
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # jpa setting
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+
+    #mailauth setting
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    username: epikeran@gmail.com
+    password: qmelsotveaoalvvj
