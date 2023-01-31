@@ -7,7 +7,6 @@ const ModuleHeader = () => {
     const navigate = useNavigate();
     const {localhost} = useSelector((store) => store);
     const [user, setUser] = useState({
-        username: "",
         name: "",
     });
 

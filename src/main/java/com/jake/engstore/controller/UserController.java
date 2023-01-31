@@ -57,14 +57,14 @@ public class UserController {
     @CrossOrigin
     @PostMapping("/signup-authcheck")
     @ResponseBody
-    public ResponseEntity authCheck(@RequestBody UserCheckRequest request) {
+    public ResponseEntity<?> authCheck(@RequestBody UserCheckRequest request) {
         String userAuthCode = request.getAuthCode();
         log.info("인증코드: {}", code);
         log.info("유저입력코드: {}", userAuthCode);
         if (code.equals(userAuthCode)) {
-            return new ResponseEntity(HttpStatus.OK);
+            return new ResponseEntity<>(HttpStatus.OK);
         }
-        return new ResponseEntity(HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
     // 유저 이메일 찾기

@@ -9,9 +9,6 @@ import com.jake.engstore.dto.response.UserFindResponse;
 import com.jake.engstore.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -20,13 +17,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.Objects;
 import java.util.Random;
 
 @Slf4j
@@ -40,15 +33,13 @@ public class UserService {
     // 모든 유저 찾기
     @Transactional(readOnly = true)
     public List<User> findUsers() {
-        List<User> users = userRepository.findAll();
-        return users;
+        return userRepository.findAll();
     }
 
     // 유저 찾기
     @Transactional(readOnly = true)
     public User findUser(Long id) {
-        User user = userRepository.findById(id).orElseGet(() -> new User());
-        return user;
+        return userRepository.findById(id).orElseGet(User::new);
     }
 
     // 유저 추가
@@ -83,7 +74,7 @@ public class UserService {
                 resetSignIn(userEntity.getUsername());
                 return 1;
             }
-            if (request.getPhone() != "") {
+            if (!Objects.equals(request.getPhone(), "")) {
                 userEntity.setPhone(request.getPhone());
                 resetSignIn(userEntity.getUsername());
                 return 1;
@@ -108,11 +99,10 @@ public class UserService {
         return -1;
     }
 
-    // 이메일로 유저찾기
+    // 이메일로 유저찾기 (중복확인)
     @Transactional(readOnly = true)
     public User findUserByUsername(UserCheckRequest request) {
-        User resUser = userRepository.findByUsername(request.getUsername()).orElseGet(() -> new User());
-        return resUser;
+        return userRepository.findByUsername(request.getUsername()).orElseGet(User::new);
     }
 
     // 유저 이메일 찾기
@@ -121,7 +111,7 @@ public class UserService {
         String name = request.getName();
         String phone = request.getPhone();
         String birth = request.getBirth();
-        User userEntity = userRepository.findByNameAndPhoneAndBirth(name, phone, birth).orElseGet(() -> new User());
+        User userEntity = userRepository.findByNameAndPhoneAndBirth(name, phone, birth).orElseGet(User::new);
         UserFindResponse userDto = new UserFindResponse();
         userDto.setUsername(userEntity.getUsername());
         return userDto;
@@ -134,8 +124,8 @@ public class UserService {
         String name = request.getName();
         String phone = request.getPhone();
         String birth = request.getBirth();
-        User userEntity = userRepository.findByUsernameAndNameAndPhoneAndBirth(username, name, phone, birth).orElseGet(() -> new User());
-        if (userEntity != null) {
+        User userEntity = userRepository.findByUsernameAndNameAndPhoneAndBirth(username, name, phone, birth).orElseGet(User::new);
+        if (userEntity.getUsername() != null) {
             String rawPassword = createPwKey();
             boolean sentEmail = emailSenderService.sendEmailWithNewPassword(username, rawPassword);
             if (sentEmail) {
@@ -160,14 +150,15 @@ public class UserService {
         User principal = userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("해당 사용자를 찾을 수 없습니다.: " + username));
         UserDetails newPrincipal = new PrincipalDetails(principal);
-        UsernamePasswordAuthenticationToken newAuth = new UsernamePasswordAuthenticationToken(newPrincipal, currentAuth.getCredentials(), newPrincipal.getAuthorities());
+        UsernamePasswordAuthenticationToken newAuth
+                = new UsernamePasswordAuthenticationToken(newPrincipal, currentAuth.getCredentials(), newPrincipal.getAuthorities());
         newAuth.setDetails(currentAuth.getDetails());
         return newAuth;
     }
 
     // 신규 비밀번호 생성
     private String createPwKey() {
-        StringBuffer key = new StringBuffer();
+        StringBuilder key = new StringBuilder();
         Random rnd = new Random();
 
         for (int i = 0; i < 8; i++) {
@@ -175,18 +166,12 @@ public class UserService {
 
             if (i < 6) {
                 switch (index) {
-                    case 0:
-                        key.append((char) ((rnd.nextInt(26)) + 97));
-                        break;
-                    case 1:
-                        key.append((char) ((rnd.nextInt(26)) + 65));
-                        break;
-                    case 2:
-                        key.append(rnd.nextInt(10));
-                        break;
+                    case 0 -> key.append((char) ((rnd.nextInt(26)) + 97));
+                    case 1 -> key.append((char) ((rnd.nextInt(26)) + 65));
+                    case 2 -> key.append(rnd.nextInt(10));
                 }
             } else  {
-                int arr[] = {33, 64, 35, 36};
+                int[] arr = {33, 64, 35, 36};
                 key.append((char) arr[(rnd.nextInt(4))]);
             }
         }
