@@ -37,6 +37,7 @@ public class User {
     public void setRoleUser() {
         this.role = RoleType.USER.getDescription();
     }
+    public void setResign() { this.resign = 'Y'; }
 
     public void setResignDefault() {
         this.resign = 'N';

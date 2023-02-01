@@ -8,4 +8,5 @@ public class UserUpdateRequest {
     private String prePassword;
     private String newPassword;
     private String phone;
+    private String resign;
 }

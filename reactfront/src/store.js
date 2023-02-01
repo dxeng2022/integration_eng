@@ -1,5 +1,5 @@
 const initState = {
-    localhost: "http://localhost:8900",
+    localhost: "",
 }
 
 const reducer = (state = initState) => {

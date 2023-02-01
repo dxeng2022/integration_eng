@@ -27,9 +27,10 @@ public class UserController {
     @CrossOrigin
     @ResponseBody
     @GetMapping("/user/my-info")
-    public User userMyPage(@AuthenticationPrincipal PrincipalDetails principal) {
+    public ResponseEntity<?> userMyPage(@AuthenticationPrincipal PrincipalDetails principal) {
+        log.info("principal: {}", principal.getUser().toString());
         User user = principal.getUser();
-        return user;
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
     // 이메일 중복확인

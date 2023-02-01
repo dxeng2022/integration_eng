@@ -64,7 +64,6 @@ public class UserService {
     @Transactional
     public Integer updateUser(Long id, UserUpdateRequest request) {
         try {
-            log.warn(request.getPhone());
             User userEntity = userRepository.findById(id)
                     .orElseThrow(() -> new IllegalArgumentException("유저 찾기 실패: 아이디를 찾을 수 없습니다. userId-" + id));
             if (request.getPrePassword() != null && encoder.matches(request.getPrePassword(), userEntity.getPassword())) {
@@ -76,6 +75,11 @@ public class UserService {
             }
             if (!Objects.equals(request.getPhone(), "")) {
                 userEntity.setPhone(request.getPhone());
+                resetSignIn(userEntity.getUsername());
+                return 1;
+            }
+            if (!Objects.equals(request.getResign(), "")) {
+                userEntity.setResign();
                 resetSignIn(userEntity.getUsername());
                 return 1;
             }
