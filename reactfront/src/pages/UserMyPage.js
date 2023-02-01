@@ -93,6 +93,40 @@ const UserMyPage = () => {
 
     const resign = (e) => {
         e.preventDefault();
+
+        let details = {
+            id: user.id,
+            resign: 'Y'
+        };
+
+        console.log(details);
+
+        fetch(localhost + "/api/user/" + details.id, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            },
+            body: JSON.stringify(details)
+        })
+            .then(res => {
+                console.log(1, res)
+                if (res.status === 200) {
+                    fetch(localhost + "/logout", {
+                        method: "GET",
+                    })
+                        .then(res => {
+                            console.log(1, res)
+                            const form = res.url.substring(res.url.lastIndexOf(":"));
+                            const url = form.slice(form.indexOf("/"));
+                            if (res.status === 200) {
+                                navigate(url);
+                            }
+                        })
+                    alert("수정완료");
+                } else {
+                    alert("수정실패");
+                }
+            })
     }
 
     return (

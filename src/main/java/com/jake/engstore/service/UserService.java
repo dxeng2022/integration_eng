@@ -73,12 +73,12 @@ public class UserService {
                 resetSignIn(userEntity.getUsername());
                 return 1;
             }
-            if (!Objects.equals(request.getPhone(), "")) {
+            if (request.getPhone() != null) {
                 userEntity.setPhone(request.getPhone());
                 resetSignIn(userEntity.getUsername());
                 return 1;
             }
-            if (!Objects.equals(request.getResign(), "")) {
+            if (request.getResign() != null) {
                 userEntity.setResign();
                 resetSignIn(userEntity.getUsername());
                 return 1;
