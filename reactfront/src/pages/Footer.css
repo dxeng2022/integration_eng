@@ -1,0 +1,48 @@
+.footer {
+    background-color: #263a4e;
+    color: white;
+    height: 55px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerimg {
+    height: 20px;
+    margin-right: 10px;
+    margin-left: 53px;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.border {
+    position: absolute;
+    border-left : 1px solid white;
+    height: 40px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.mail {
+    display: flex;
+    align-items: center;
+}
+
+.phone {
+    display: flex;
+    align-items: center;
+}

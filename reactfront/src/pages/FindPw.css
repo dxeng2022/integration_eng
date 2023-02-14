@@ -1,0 +1,74 @@
+.findpw_box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 27vh;  
+    position: absolute;
+    margin-left: 52.5vw;
+    z-index: 1;
+}
+
+.findpw_tab {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.6vw;
+    font-weight: bold;
+    margin-top: 2.5vh;
+}
+
+.findpw_tabpw {
+    text-decoration: underline;
+    text-underline-position : under;
+}
+
+.findpw_inputName {
+    font-size: 1.2vw;
+	font-weight: bold;
+	color: #262626;
+    margin-top: 1.3vh;
+    margin-bottom: 0.3vh;
+}
+
+.findpw_inputbox {
+    display: flex;
+    border-radius: 10vh;
+    padding: 0.7vh;
+    padding-right: 1.76vw;
+    margin-top: 0.3vh;
+    background-color: white;
+    border: 1px solid #e2e0e0;
+    width: 20.5vw;
+    height: 2.3vh;
+    box-shadow: 0.2vh 0.2vh 0.2vh 0.2vh rgba(89, 89, 89, 0.565);
+}
+
+.findpw_inputbox:focus-within {
+    border: 1px solid #6387ff;
+}
+
+.findpw_input {
+    width: 20vw;
+    outline: none;
+	border: none;
+    height: 2.25vh;
+    font-size: 1vw;
+	font-weight: 500;
+    margin-left: 0.7vw;
+}
+
+.findpw_input::placeholder {
+    color: #dadada;
+}
+
+.findpw_buttons {
+    margin-top: 1.7vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.findpw_errorMessageWrap {
+    margin-top: 0.2vh;
+    color: #ef0000;
+    font-size: 0.6vw;
+    height: 0.1vh;
+    margin-left: 1vh;
+}

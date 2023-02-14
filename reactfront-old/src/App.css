@@ -1,0 +1,10 @@
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #E6E6E6;
+  background-size: cover;
+  object-fit: contain;
+  font-family: "notosans";
+}

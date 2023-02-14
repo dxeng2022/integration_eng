@@ -1,0 +1,66 @@
+.moduleHeader {
+    /*border: 1px solid blue;*/
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    /* FooterK Font*/
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.moduleHeaderLabel {
+    position: fixed;
+    margin-top: 1vh;
+    cursor: pointer;
+}
+
+.header_loginForm {
+    margin-top: 1vh;
+    margin-right: 27vh;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+}
+
+.header_loginImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_loginForm > div > img {
+    width: 45px;
+}
+
+.header_loginName > h2 {
+    width: 130px;
+    font-size: 26px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_loginLink {
+    width: 130px;
+    padding-left: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_loginLink p {
+    margin: 0px 3px 0px 5px;
+    font-size: 12px;
+}
+
+.header_loginBorder {
+    border-right : 1px solid black;
+    width: 1px;
+    height: 15px;
+}

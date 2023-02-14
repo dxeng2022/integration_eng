@@ -1,10 +1,23 @@
-.App {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #E6E6E6;
-  background-size: cover;
-  object-fit: contain;
-  font-family: "notosans";
+* {
+    margin: 0;
+    font-family: 'Noto Sans';
+}
+
+.app_app {
+    background-image: url("../public/img/bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.app_app::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .3);
 }

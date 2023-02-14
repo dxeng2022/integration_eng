@@ -1,33 +1,20 @@
-import './App.css';
-import {Route, Routes, useLocation} from "react-router-dom";
-import MainPage from "./pages/MainPage";
-import ModuleMainPage from "./pages/module/ModuleMainPage";
-import Footer from "./component/Footer";
-import ModuleHeader from "./component/ModuleHeader";
-import UserMyPage from "./pages/UserMyPage";
-import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
-import SignupPage from "./pages/SignupPage";
-import SignupCompletePage from "./pages/SignupCompletePage";
+import { Routes, Route } from "react-router-dom";
+import Main from "./pages/Main.jsx";
+import Footer from "./pages/Footer.jsx";
+import Sign from "./pages/Sign.jsx";
+import Module from "./pages/Module.jsx";
 
 function App() {
-    const loc = useLocation();
-    const firstUrl = loc.pathname.split('/')
-    return (
-        <div className="App">
-            {firstUrl[1] === 'module'?<ModuleHeader/>:''}
-            <div className="container">
-                <Routes>
-                    <Route path="*" exact={true} element={<MainPage/>}/>
-                    <Route path="/policy" exact={true} element={<PrivacyPolicyPage/>}/>
-                    <Route path="/signup" exact={true} element={<SignupPage/>}/>
-                    <Route path="/signup-complete" exact={true} element={<SignupCompletePage/>}/>
-                    <Route path="/module" exact={true} element={<ModuleMainPage/>}/>
-                    <Route path="/userinfo" exact={true} element={<UserMyPage/>}/>
-                </Routes>
-            </div>
-            <Footer/>
-        </div>
-    );
+  return (
+    <div className="app_app">
+      <Routes>
+        <Route path='/*' element={<Main />} />
+        <Route path='/sign/*' element={<Sign />} />
+        <Route path='/module/*' element={<Module />} />
+      </Routes>
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
