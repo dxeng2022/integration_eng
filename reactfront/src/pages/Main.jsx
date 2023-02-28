@@ -10,11 +10,6 @@ function Main() {
 
     return (
         <>
-            <Routes>
-                    <Route path="/" element={<Login />} />
-                    <Route path="/findemail" element={<FindEmail />} />
-                    <Route path="/findpw" element={<FindPw />} />
-            </Routes>
 
             <div className="main_box">
                 <div className="main_title" onClick={()=>{ navigate('/') }}>
@@ -24,6 +19,13 @@ function Main() {
                     <img src="/img/network.png" alt="img" className="main_img" />
                     <div className="main_line" />
                 </div>
+
+                <Routes>
+                        <Route path="/" element={<Login />} />
+                        <Route path="/findemail" element={<FindEmail />} />
+                        <Route path="/findpw" element={<FindPw />} />
+                </Routes>
+                
             </div>
         </>
     )
