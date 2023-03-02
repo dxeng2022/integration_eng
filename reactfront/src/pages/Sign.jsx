@@ -10,7 +10,7 @@ function Sign() {
         <>
             <div className="sign_box">
                 <div className="sign_title">
-                    설계정보 디지털 변환 플랫폼
+                    Engineering X Digital Platform
                     <div className='sign_subtitle'>회원가입</div>
                 </div>
 

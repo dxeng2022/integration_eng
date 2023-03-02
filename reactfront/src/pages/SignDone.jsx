@@ -11,11 +11,11 @@ function SignDone() {
     <div className='signdone_box'>
 
       <div className="signdone_imgbox">
-        <img src="/img/firework.png" alt="img" className="signdone_img" />
+        <img src="/img/done.png" alt="img" className="signdone_img" />
       </div>
 
       <div className="signdone_con">
-        가입을 축하드립니다!
+        가입이 완료되었습니다.
       </div>
 
       <div className="signdone_home">
@@ -31,9 +31,9 @@ function SignDone() {
                 backgroundColor:'#7ccc46', 
                 height: '4.5vh', 
                 width: '9vw', 
-                borderRadius:30,
-                fontSize: '1.8vw',
-                fontWeight: 600,
+                borderRadius: '10px',
+                fontSize: '1.6vw',
+                fontWeight: '600',
                 '&:hover': {backgroundColor: '#7c9a67'}}}>
         확 인
         </Button>

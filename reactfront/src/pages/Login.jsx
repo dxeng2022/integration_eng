@@ -42,6 +42,12 @@ function Login() {
         setPwValid(false);
         }
     };
+
+    const handleOnKeyPress = e => {
+        if (e.key === 'Enter') {
+            onClickConfirmButton();
+        }
+    };
     
     const onClickConfirmButton = () => {
 
@@ -89,6 +95,7 @@ function Login() {
             <div className="login_inputTitle">이메일</div>
                 <div className="login_inputWrap">
                     <input
+                        autoFocus
                         className="login_input"
                         type="text"
                         placeholder="test@gmail.com"
@@ -112,6 +119,7 @@ function Login() {
                 placeholder="영문, 숫자, 특수문자 포함 8자 이상"
                 value={pw}
                 onChange={handlePw}
+                onKeyDown={handleOnKeyPress}
             />
             </div>
             <div className="login_errorMessageWrap">
@@ -132,13 +140,14 @@ function Login() {
                         type="submit" 
                         variant="contained"
                         sx={{
-                            backgroundColor:'#4ec6e1', 
+                            backgroundColor:'#7ccc46', 
                             height: '4.5vh', 
                             width: '23vw', 
-                            borderRadius:30,
-                            fontSize: '1.8vw',
-                            fontWeight: 600,
-                            '&:hover': {backgroundColor: '#6ba3af'}}}>
+                            borderRadius: '10px',
+                            fontSize: '1.6vw',
+                            fontWeight: '600',
+                            overflow: 'hidden',
+                            '&:hover': {backgroundColor: '#7c9a67'}}}>
                     로 그 인
                     </Button>
 
@@ -147,13 +156,14 @@ function Login() {
                         type="submit" 
                         variant="contained" 
                         sx={{
-                            backgroundColor:'#7ccc46', 
+                            backgroundColor:'#4ec6e1', 
                             height: '4.5vh', 
                             width: '23vw',
-                            borderRadius:30,
-                            fontSize: '1.8vw',
+                            borderRadius: '10px',
+                            fontSize: '1.6vw',
                             fontWeight: '600',
-                            '&:hover': {backgroundColor: '#7c9a67'},
+                            overflow: 'hidden',
+                            '&:hover': {backgroundColor: '#6ba3af'},
                             mt: '1.7vh'
                         }}>
                         회 원 가 입

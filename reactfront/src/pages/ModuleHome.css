@@ -37,6 +37,7 @@
   padding-right: 7vw;
   padding-bottom: 1vh;
   border-bottom: 1px solid #808080;
+  cursor: default;
 }
 
 .modulehome_list {
@@ -55,6 +56,7 @@
   font-weight: 600;
   list-style-position: inside;
   text-indent: -28px;
+  cursor: default;
 }
 
 .modulehome_buttons {
