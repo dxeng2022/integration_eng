@@ -39,7 +39,7 @@ function Module() {
       
       <div className="module_title" onClick={()=>{ navigate('/module') }}>
         <img src="/img/logo.png" alt="img" className="module_img" />
-        설계정보 디지털 변환 플랫폼
+        Engineering X Digital Platform
       </div>
 
       <div className="module_user">

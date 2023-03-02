@@ -20,16 +20,6 @@
   white-space: nowrap;
 }
 
-.signup_email_confirm_inputName {
-  font-size: 1.2vw;
-  font-weight: 500;
-  color: #262626;
-  margin-top: 2.5vh;
-  margin-bottom: 0.3vh;
-  padding-right: 3.3vw;
-  white-space: nowrap;
-}
-
 .signup_pw_first_inputName {
   font-size: 1.2vw;
   font-weight: 500;
@@ -54,7 +44,8 @@
 }
 
 .signup_email_confirm {
-  margin-top: 2vh;
+  margin-top: 1vh;
+  margin-left: 9.6vw;
   display: flex;
   flex-direction: row;
 }
@@ -68,6 +59,7 @@
 
 .signup_pw_second {
   margin-top: 2vh;
+  margin-left: 9.6vw;
   display: flex;
   flex-direction: row;
   white-space: nowrap;
@@ -102,8 +94,8 @@
   width: 20vw;
   outline: none;
   border: none;
-  height: 2.25vh;
-  font-size: 1vw;
+  height: 2.5vh;
+  font-size: 0.8vw;
   font-weight: 500;
   margin-left: 0.7vw;
   background-color: rgba(255, 255, 255, 0);
@@ -111,6 +103,8 @@
 
 .signup_input::placeholder {
   color: #787777;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .signup_sub {
@@ -126,9 +120,10 @@
 .signup_errorMessageWrap {
   margin-top: 0.5vh;
   color: #ef0000;
-  font-size: 0.85vw;
+  font-size: 0.7vw;
   height: 0.1vh;
   margin-left: 1vh;
+  white-space: nowrap;
 }
 
 .signup_buttons {
@@ -140,6 +135,7 @@
 }
 
 input[type="date"]::before {
+  white-space: nowrap;
   content: attr(data-placeholder);
   width: 100%;
 }

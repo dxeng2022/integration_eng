@@ -544,9 +544,10 @@ function SignPolicy() {
                         backgroundColor:'#a8a8a8', 
                         height: '4.5vh', 
                         width: '9vw', 
-                        borderRadius:30,
-                        fontSize: '1.8vw',
-                        fontWeight: 600,
+                        borderRadius: '10px',
+                        fontSize: '1.6vw',
+                        fontWeight: '600',
+                        overflow: 'hidden',
                         '&:hover': {backgroundColor: '#7e7e7e'}}}>
                 취 소
                 </Button>
@@ -560,9 +561,10 @@ function SignPolicy() {
                         backgroundColor:'#7ccc46', 
                         height: '4.5vh', 
                         width: '9vw',
-                        borderRadius:30,
-                        fontSize: '1.8vw',
+                        borderRadius: '10px',
+                        fontSize: '1.6vw',
                         fontWeight: '600',
+                        overflow: 'hidden',
                         '&:hover': {backgroundColor: '#7c9a67'}
                     }}>
                     다 음

@@ -110,7 +110,7 @@ function SignUp() {
   const handleName = (e) => {
     setName(e.target.value);
     const regex = 
-    /^[가-힣a-zA-Z]{2,20}$/; 
+    /^[가-힣a-zA-Z]{2,20}$/;
     if (regex.test(e.target.value)) {
     setNameValid(true);
     } else {
@@ -265,7 +265,7 @@ function SignUp() {
       'birth' : newBirth
     };
     
-    fetch("/signup-user", {
+    fetch("/api/user", {
         method: "POST",
         headers: {
             "Content-Type": "application/json;charset=UTF-8"
@@ -324,7 +324,7 @@ function SignUp() {
                     whiteSpace: 'nowrap',
                     height: '4.5vh', 
                     width: '6.4vw', 
-                    borderRadius:30,
+                    borderRadius: "10px",
                     fontSize: '1vw',
                     fontWeight: 600,
                     ml: '1vw',
@@ -336,17 +336,16 @@ function SignUp() {
 
           <div className="signup_email_confirm">
 
-            <div className="signup_email_confirm_inputName">이메일 인증</div>
-              <div className="signup_inputbox">
-                <input
-                  readOnly = {authRead}
-                  value={authCode}
-                  onChange={handleAuthCode}
-                  className="signup_input"
-                  type="text"
-                  placeholder=" 인증번호 입력 "
-                  />
-              </div>
+            <div className="signup_inputbox">
+              <input
+                readOnly = {authRead}
+                value={authCode}
+                onChange={handleAuthCode}
+                className="signup_input"
+                type="text"
+                placeholder=" 인증번호 입력 "
+                />
+            </div>
 
               <Button
                 disabled={confirm}
@@ -358,9 +357,9 @@ function SignUp() {
                     whiteSpace: 'nowrap',
                     height: '4.5vh', 
                     width: '6.4vw', 
-                    borderRadius:30,
+                    borderRadius: "10px",
                     fontSize: '1vw',
-                    fontWeight: 600,
+                    fontWeight: '600',
                     ml: '1vw',
                     '&:hover': {backgroundColor: '#7c9a67'}}}>
                 번호발송
@@ -371,12 +370,13 @@ function SignUp() {
                 type="submit" 
                 variant="contained"
                 sx={{
+                    whiteSpace: 'nowrap',
                     backgroundColor:'#7ccc46', 
                     height: '4.5vh', 
                     width: '4vw', 
-                    borderRadius:30,
+                    borderRadius: "10px",
                     fontSize: '1vw',
-                    fontWeight: 600,
+                    fontWeight: '600',
                     ml: '1vw',
                     '&:hover': {backgroundColor: '#7c9a67'}}}>
                 확인
@@ -414,7 +414,6 @@ function SignUp() {
 
 
           <div className="signup_pw_second">
-            <div className="signup_pw_second_inputName">비밀번호 확인</div>
             <div className="signup_pw_second_error">
               <div className="signup_inputbox">
                 <form>
@@ -545,16 +544,17 @@ function SignUp() {
 
       <div className="signup_buttons">
         <Button
-            onClick={()=>{ navigate(-1) }} 
+            onClick={()=>{ navigate('/') }} 
             type="submit" 
             variant="contained"
             sx={{
                 backgroundColor:'#a8a8a8', 
                 height: '4.5vh', 
                 width: '9vw', 
-                borderRadius:30,
-                fontSize: '1.5vw',
-                fontWeight: 600,
+                borderRadius: "10px",
+                fontSize: '1.6vw',
+                fontWeight: '600',
+                overflow: 'hidden',
                 '&:hover': {backgroundColor: '#7e7e7e'}}}>
         취 소
         </Button>
@@ -568,9 +568,10 @@ function SignUp() {
               backgroundColor:'#7ccc46', 
               height: '4.5vh', 
               width: '9vw',
-              borderRadius:30,
-              fontSize: '1.5vw',
+              borderRadius: "10px",
+              fontSize: '1.6vw',
               fontWeight: '600',
+              overflow: 'hidden',
               '&:hover': {backgroundColor: '#7c9a67'}
           }}>
           확 인

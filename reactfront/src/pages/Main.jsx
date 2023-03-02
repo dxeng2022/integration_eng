@@ -12,13 +12,16 @@ function Main() {
         <>
 
             <div className="main_box">
+
                 <div className="main_title" onClick={()=>{ navigate('/') }}>
-                    설계정보 디지털 변환 플랫폼
+                    Engineering X Digital Platform
                 </div>
+
                 <div className="main_content">
-                    <img src="/img/network.png" alt="img" className="main_img" />
+                    <img src="/img/main.png" alt="img" className="main_img" />
                     <div className="main_line" />
                 </div>
+                
 
                 <Routes>
                         <Route path="/" element={<Login />} />

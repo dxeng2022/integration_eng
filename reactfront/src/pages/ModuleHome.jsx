@@ -24,13 +24,13 @@ function ModuleHome() {
               type="submit" 
               variant="contained"
               sx={{
-                  backgroundColor:'#12A3CC', 
-                  height: '4.5vh', 
-                  width: '17vw', 
-                  borderRadius:30,
-                  fontSize: '1.4vw',
-                  fontWeight: 600,
-                  '&:hover': {backgroundColor: '#0F6983'}}}>
+                height: '4.5vh', 
+                width: '17vw', 
+                borderRadius: '10px',
+                fontSize: '1.4vw',
+                fontWeight: '600',
+                backgroundColor:'#12A3CC', 
+                '&:hover': {backgroundColor: '#0F6983'}}}>
           이 동 하 기 >
           </Button>
         </div>
@@ -51,13 +51,13 @@ function ModuleHome() {
               type="submit" 
               variant="contained"
               sx={{
-                  backgroundColor:'#5C70EB', 
-                  height: '4.5vh', 
-                  width: '17vw', 
-                  borderRadius:30,
-                  fontSize: '1.4vw',
-                  fontWeight: 600,
-                  '&:hover': {backgroundColor: '#3D4A9A'}}}>
+                height: '4.5vh', 
+                width: '17vw', 
+                borderRadius: '10px',
+                fontSize: '1.4vw',
+                fontWeight: '600',
+                backgroundColor:'#12A3CC', 
+                '&:hover': {backgroundColor: '#0F6983'}}}>
           이 동 하 기 >
           </Button>
         </div>
@@ -78,13 +78,13 @@ function ModuleHome() {
               type="submit" 
               variant="contained"
               sx={{
-                  backgroundColor:'#A74BFD', 
-                  height: '4.5vh', 
-                  width: '17vw', 
-                  borderRadius:30,
-                  fontSize: '1.4vw',
-                  fontWeight: 600,
-                  '&:hover': {backgroundColor: '#6E2FA9'}}}>
+                height: '4.5vh', 
+                width: '17vw', 
+                borderRadius: '10px',
+                fontSize: '1.4vw',
+                fontWeight: '600',
+                backgroundColor:'#12A3CC', 
+                '&:hover': {backgroundColor: '#0F6983'}}}>
           이 동 하 기 >
           </Button>
         </div>

@@ -7,14 +7,13 @@
 }
 
 .signdone_img {
-  height: 40vh;
+  height: 37vh;
   width: 35vw;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5.5vw;
-  box-shadow: 0.4vh 0.4vh 0.4vh 0.4vh rgba(0, 0, 0, 0.277);
 }
 
 .signdone_con {

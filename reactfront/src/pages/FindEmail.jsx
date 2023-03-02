@@ -31,7 +31,7 @@ function FindEmail() {
     const handleName = (e) => {
         setName(e.target.value);
         const regex = 
-        /^[가-힣]{2,4}$/;
+        /^[가-힣a-zA-Z]{2,20}$/;
         if (regex.test(e.target.value)) {
         setNameValid(true);
         } else {
@@ -105,9 +105,10 @@ function FindEmail() {
             <div className="findemail_inputName">이름</div>
             <div className="findemail_inputbox">
                 <input
+                    autoFocus
                     className="findemail_input"
                     type="text"
-                    placeholder=" 3~4 글자 이름을 입력해주세요. "
+                    placeholder=" 2글자 이상 입력해주세요. "
                     value={name}
                     onChange={handleName} />
             </div>
@@ -135,11 +136,13 @@ function FindEmail() {
             <div className="findemail_inputName">생년월일</div>
             <div className="findemail_inputbox">
                 <input
+                    required
                     className="findemail_input"
                     type="date"
-                    value={birth}
+                    data-placeholder=" 우측 달력을 선택해주세요. "
                     min="1950-01-01"
                     max="2002-12-31"
+                    value={birth}
                     onChange={handleBirth} />
             </div>
 
@@ -153,11 +156,12 @@ function FindEmail() {
                         backgroundColor:'#a8a8a8', 
                         height: '4.5vh', 
                         width: '9vw', 
-                        borderRadius:30,
-                        fontSize: '1.8vw',
+                        borderRadius: '10px',
+                        fontSize: '1.6vw',
                         fontWeight: 600,
-                        '&:hover': {backgroundColor: '#7e7e7e'}}}>
-                취 소
+                        '&:hover': {backgroundColor: '#7e7e7e'}
+                        }}>
+                    취 소
                 </Button>
 
                 <Button
@@ -170,8 +174,8 @@ function FindEmail() {
                         backgroundColor:'#7ccc46', 
                         height: '4.5vh', 
                         width: '9vw',
-                        borderRadius:30,
-                        fontSize: '1.8vw',
+                        borderRadius: '10px',
+                        fontSize: '1.6vw',
                         fontWeight: '600',
                         '&:hover': {backgroundColor: '#7c9a67'}
                     }}>

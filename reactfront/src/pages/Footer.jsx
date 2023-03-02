@@ -1,6 +1,7 @@
 function Footer() {
     return (
     <div className="footer">
+
         <div className="contact">
             <img src={ process.env.PUBLIC_URL + '/img/contact.png' } alt='img' className='footerimg' />
             Contact Us
@@ -19,6 +20,7 @@ function Footer() {
                 02-6246-1400
             </div>
         </div>
+        
     </div>
     )
 }
