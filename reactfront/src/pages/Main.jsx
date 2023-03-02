@@ -14,7 +14,7 @@ function Main() {
             <div className="main_box">
 
                 <div className="main_title" onClick={()=>{ navigate('/') }}>
-                    Engineering X Digital Platform
+                    DX Platform
                 </div>
 
                 <div className="main_content">

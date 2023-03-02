@@ -1,6 +1,6 @@
 .login_contentWrap {
-    top: 51%;
-    left: 67%;
+    top: 50%;
+    left: 70%;
     transform: translate(-50%, -50%);
     flex-direction: column;
     position: absolute;
