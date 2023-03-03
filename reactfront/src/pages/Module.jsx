@@ -38,8 +38,8 @@ function Module() {
     <>
       
       <div className="module_title" onClick={()=>{ navigate('/module') }}>
-        <img src="/img/logo.png" alt="img" className="module_img" />
-        Engineering X Digital Platform
+        {/* <img src="/img/logo.png" alt="img" className="module_img" /> */}
+        DX Platform
       </div>
 
       <div className="module_user">
