@@ -17,7 +17,7 @@ function FindEmail() {
     const [notAllow, setNotAllow] = useState(true);
 
     const [resUser, setResUser] = useState({
-        email: ""
+        username: ""
     });
 
     useEffect(() => {
@@ -80,7 +80,7 @@ function FindEmail() {
                 console.log(1, res)
                 if (res.status === 200) {
                     return res.json();
-                } else if (res.status === 204) {
+                } else if (res.status === 400) {
                     return null;
                 }
             })
@@ -88,7 +88,7 @@ function FindEmail() {
                 console.log("정상", res);
                 if (res !== null) {
                     setResUser(res);
-                    alert('회원님의 이메일은' + JSON.stringify(res.email) + '입니다. ');
+                    alert('회원님의 이메일은' + JSON.stringify(res.username) + '입니다. ');
                 } else {
                     alert(' 입력하신 정보와 일치한 Email이 없습니다. ');
                 }})
